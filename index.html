@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentación técnica</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <nav id="navbar">
+      <header>
+        Documentación JS
+      </header>
+      <a class="nav-link" href="#introducción">Introducción</a>
+      <a class="nav-link" href="#lo_que_ya_deberías_saber">Lo que ya deberías saber </a>
+      <a class="nav-link" href="#javascript_y_java">JavaScript y Java</a>
+      <a class="nav-link" href="#!Hello_world">!Hello World</a>
+      <a class="nav-link" href="#variables">Variables</a>
+      <a class="nav-link" href="#declarar_variables">Declarar Variables</a>
+      <a class="nav-link" href="#alcance_de_la_variable">Alcance de la variable</a>
+      <a class="nav-link" href="#variables_globales">Variables globales</a>
+      <a class="nav-link" href="#constantes">Constantes</a>
+      <a class="nav-link" href="#tipo_de_datos">Tipo de Datos</a>
+      <a class="nav-link" href="#declaración_if_y_else">Declaración If y Else</a>
+      <a class="nav-link" href="#declaración_while">Declaración While</a>
+      <a class="nav-link" href="#declaración_de_funciones">Declaración de funciones</a>
+      <a class="nav-link  none" href="#referencias">Referencias</a>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="introducción">
+        <header>Introducción</header>
+        <p>JavaScript es una multiplataforma, con lenguaje de Script orientado a objetos. Es un lenguaje ligero y pequeño. Dentro del entorno del host (por ejemplo, un navegador), JavaScript puede ser conectado a los objetos de este entorno para proporcionar control sobre ellos.</p>
+        <p>JavaScript contiene una biblioteca estándar de objetos, como Array, Date y Math, y un conjunto básico de elementos de lenguaje, como operadores, estructuras de control y sentencias. Core JavaScript se puede extender para una variedad de propósitos al complementarlo con objetos adicionales; Por ejemplo:</p>
+        <ul>
+          <li>El JavaScript del lado del cliente amplía el lenguaje central al proporcionar objetos para controlar un navegador y su Modelo de objetos de documento (DOM). Por ejemplo, las extensiones del lado del cliente permiten que una aplicación coloque elementos en un formulario HTML y responda a eventos del usuario, como clics del mouse, entrada de formulario y navegación de página.</li>
+          <li>JavaScript del lado del servidor amplía el lenguaje central al proporcionar objetos relevantes para ejecutar JavaScript en un servidor. Por ejemplo, las extensiones del lado del servidor permiten que una aplicación se comunique con una base de datos, proporcionen continuidad de información de una invocación a otra de la aplicación o realicen manipulaciones de archivos en un servidor.
+          </li>
+        </ul>
+      </section>
+      <section class="main-section" id="lo_que_ya_deberías_saber">
+        <header>Lo que ya deberías saber</header>
+        <p>Esta guía asume que tiene los siguientes antecedentes básicos:</p>
+        <ul>
+          <li>Un entendimiento general del Internet y del "World Wide Web" (WWW).</li>
+          <li>Buen conocimiento del HyperText Markup Language (HTML).</li>
+          <li>Alguna experiencia en programación. Si tu eres nuevo en la programación, prueba uno de los tutoriales vinculados en la página principal de JavaScript.</li>
+        </ul>
+      </section>
+      <section class="main-section" id="javascript_y_java">
+        <header>JavaScript y Java</header>
+        <p>JavaScript y Java son similares en algunas cosas pero fundamentalmente diferentes en algunas otras. El lenguaje de JavaScript se parece a Java pero no tiene el código estático de Java y la verificación de tipo fuerte. JavaScript sigue la mayoria de la sintaxis de expresión Java, convenciones de nomenclatura y construcciones básicas de flujo de control, razón por la cual se cambió el nombre de LiveScript a JavaScript.</p>
+      </section>
+      <section class="main-section" id="!Hello_world">
+        <header>!Hello World</header>
+        <p>Para ir comenzando con el codigo de JavaScript, abre el Scratchpad y escribe tu primer "Hello world" en código JavaScript</p>
+        <code>
+          function greeMe(yourName) { alert("Hello " + yourName); }
+          greetMe("World");
+        </code>
+        <p>¡Seleccione el código en el pad y presione Ctrl+R para verlo desplegarse en su navegador!</p>
+      </section>
+      <section class="main-section" id="variables">
+        <header>Variables</header>
+        <p>Tu usas variables como nombres simbólicos para los valores en tu aplicación. Los nombres de las variables, llamados identificadores, conforman ciertas reglas.</p>
+        <p>Un identificador de JavaScript debe comenzar con una letra, un guión bajo (_) o un signo de dólar ($); los caracteres subsiguientes también pueden ser dígitos (0-9). Dado que JavaScript distingue entre mayúsculas y minúsculas, las letras incluyen los caracteres de la "A" a la "Z" (mayúsculas) y los caracteres de la "a" a la "z" (minúsculas).
+        </p>
+        <p>Tu puedes usar "ISO 8859-1" o letras Unicode como å y ü en identificadores. También puede usar las secuencias de escape Unicode como caracteres en los identificadores. Algunos ejemplos de nombres legales son Number_hits, temp99 y _name.</p>
+      </section>
+      <section class="main-section" id="declarar_variables">
+        <header>Declarar variables</header>
+        <p>Tu puedes declarar una variable en tres formas:</p>
+        <p>Con la palabra clave: "var". Por ejemplo,</p>
+        <code>
+          var x = 42.
+        </code>
+        <p>Esta sintaxis puede ser usada para declarar ambas variables, locales y globales.</p>
+        <p>Simplemente asignándole un valor. Por ejemplo,</p>
+        <code>
+          x = 42.
+        </code>
+        <p>Esto siempre declara una variable global. Genera una advertencia estricta de JavaScript. No deberías usar esta variante.</p>
+        <p>Con la palabra clave todavía. Por ejemplo,</p>
+        <code>
+          let y = 13.
+        </code>
+        <p>Esta sintaxis se puede utilizar para declarar una variable local de ámbito de bloque. Consulte Alcance variable a continuación.</p>
+      </section>
+      <section class="main-section" id="alcance_de_la_variable">
+        <header>Alcance de la variable</header>
+        <p>Cuando tu declaras una variable fuera de cualquier función, esta es llamada una variable global, porque es disponible para cualquier otro código en el actual documento. Cuando declaras una variable junto con una función, es llamada una variable local, porque solo está disponible junto con esa función</p>
+        <p>JavaScript anterior a ECMAScript 2015 no tiene alcance de declaración de bloque; más bien, una variable declarada dentro de un bloque es local a la función (o ámbito global) en el que reside el bloque. Por ejemplo, el siguiente código registrará 5, porque el alcance de x es la función (o contexto global) dentro del cual se declara x, no el bloque, que en este caso es una declaración if.
+        </p>
+        <code>
+          if (true) { var x = 5, } console-log(x);  // 5
+        </code>
+        <p>Este comportamiento cambia cuando se usa la declaración let introducida en ECMAScript 2015.</p>
+        <code>
+          if (true) { let y = 5; } console.log(y) // ReferenceError: y is not defined
+        </code>
+      </section>
+      <section class="main-section" id="variables_globales">
+        <header>Variables globales</header>
+        <p>Las variables globales son, de hecho, propiedades del objeto global. En las páginas web, el objeto global es ventana, por lo que puede establecer y acceder a variables globales utilizando la sintaxis de ventana.variable.</p>
+        <p>En consecuencia, puede acceder a las variables globales declaradas en una ventana o marco desde otra ventana o marco especificando el nombre de la ventana o marco. Por ejemplo, si en un documento se declara una variable denominada phoneNumber, puede hacer referencia a esta variable desde un iframe como parent.phoneNumber.</p>
+      </section>
+      <section class="main-section" id="constantes">
+        <header>Constantes</header>
+        <p>Puede crear una constante con nombre de solo lectura con la palabra clave const. La sintaxis de un identificador constante es la misma que la de un identificador variable: debe comenzar con una letra, un guión bajo o un signo de dólar y puede contener caracteres alfabéticos, numéricos o guiones bajos.
+        </p>
+        <code>
+          const PI = 3.14;
+        </code>
+        <p>Una constante no puede cambiar el valor a través de la asignación ni volver a declararse mientras se ejecuta el script. Tiene que ser inicializado a un valor.
+        </p>
+        <p>Las reglas de ámbito para las constantes son las mismas que para las variables de ámbito de bloque let. Si se omite la palabra clave const, se supone que el identificador representa una variable.
+        </p>
+        <p>No puede declarar una constante con el mismo nombre que una función o variable en el mismo ámbito. Por ejemplo:
+        </p>
+        <code>
+          // THIS WILL CAUSE AN ERROR function f() {}; const f = 5; // THIS 
+          WILL CAUSE AN ERROR ALSO function f() { const g = 5; var g;
+          //statements }
+        </code>
+        <p>Sin embargo, los atributos de los objetos no están protegidos, por lo que la siguiente instrucción se ejecuta sin problemas.</p>
+        <code>
+          const MY_OBJECT = {"key": "value"}; MY_OBJECT.key =
+          "otherValue";
+        </code>
+      </section>
+      <section class="main-section" id="tipo_de_datos">
+        <header>Tipo de Datos</header>
+        <p>El último estándar ECMASscript definió siete tipo de datos: </p>
+        <ul>
+          <li>
+            <p class="dates">Seis tipos de datos que son primitivos</p>
+            <ul>
+              <li>Boolean. Verdadero o falso</li>
+              <li>Null. Una palabra clave especial que denota un valor nulo. Debido a que JavaScript distingue entre mayúsculas y minúsculas, null no es lo mismo que Null, NULL o cualquier otra variante.</li>
+              <li>Undefined. Una propiedad de nivel superior cuyo valor no está definido.</li>
+              <li>Number. Números puede ser 42 or 3.14159</li>
+              <li>String. "Howdy"</li>
+              <li>Símbolo (nuevo en ECMAScript 2015). Un tipo de datos cuyas instancias son únicas e inmutables.</li>
+            </ul>
+          </li>
+          <li>Y objeto</li>
+          <p>Aunque estos tipos de datos son una cantidad relativamente pequeña, le permiten realizar funciones útiles con sus aplicaciones. Objetos y funciones son los otros elementos fundamentales en el lenguaje. Puede pensar en los objetos como contenedores con nombre para valores y en las funciones como procedimientos que su aplicación puede realizar.
+          </p>
+        </ul>
+      </section>
+      <section class="main-section" id="declaración_if_y_else">
+        <header>Declaración If y Else</header>
+        <p>Use la declaración if para ejecutar una declaración si una condición lógica es verdadera. Use la cláusula else opcional para ejecutar una declaración si la condición es falsa. Una sentencia if tiene el siguiente aspecto:
+        </p>
+        <code>
+          if (condition) { statement_1; } else { statement_2; }
+        </code>
+        <p>Condición puede ser cualquier expresión que se evalúe como verdadera o falsa. Consulte Boolean para obtener una explicación de lo que se evalúa como verdadero y falso. Si la condición se evalúa como verdadera, se ejecuta la declaración_1; de lo contrario, se ejecuta la declaración_2. declaración_1 y declaración_2 pueden ser cualquier declaración, incluidas otras declaraciones if anidadas.
+        </p>
+        <p>También puede combinar las declaraciones usando else if para probar múltiples condiciones en secuencia, de la siguiente manera:
+        </p>
+        <code>
+          if (condition_1) { statement_1 } else if (condition_2) {
+            statement_2; } else if (condition_n) { statement_n; } else {
+            statement_last; }
+        </code>
+        <p>En el caso de varias condiciones, solo se ejecutará la primera condición lógica que se evalúe como verdadera. Para ejecutar varias sentencias, agrúpelas dentro de una sentencia de bloque ({ ... }) . En general, es una buena práctica usar siempre sentencias de bloque, especialmente al anidar sentencias if:</p>
+        <code>
+          if (condition) { statement_1_runs_if_condition_is_true;
+          statement_2_runs_if_condition_is_true; } else {
+          statement_3_runs_if_condition_is_false;
+          statement_4_runs_if_condition_is_false; }
+        </code>
+        <p>Es aconsejable no utilizar asignaciones simples en una expresión condicional, porque la asignación puede confundirse con la igualdad al revisar el código. Por ejemplo, no use el siguiente código:
+        </p>
+        <code>
+          if (x = y) { /* statements here*/ }
+        </code>
+        <p>Si necesita usar una tarea en una expresión condicional, una práctica común es colocar paréntesis adicionales alrededor de la tarea. Por ejemplo:
+        </p>
+        <code>
+          if ((x = y)) { /* statements here */}
+        </code>
+      </section>
+      <section class="main-section" id="declaración_while">
+        <header>Declaración While</header>
+        <p>Una instrucción while ejecuta sus instrucciones siempre que una condición específica se evalúe como verdadera. Una instrucción while tiene el siguiente aspecto:
+        </p>
+        <code>
+          while (condition) statement
+        </code>
+        <p>Si la condición se vuelve falsa, la instrucción dentro del bucle deja de ejecutarse y el control pasa a la instrucción que sigue al bucle.
+        </p>
+        <p>La prueba de condición ocurre antes de que se ejecute la declaración en el ciclo. Si la condición devuelve verdadero, la declaración se ejecuta y la condición se prueba nuevamente. Si la condición devuelve falso, la ejecución se detiene y el control se pasa a la instrucción que sigue a while.
+        </p>
+        <p>To execute multiple statements, use a block statement ({ ... }) to group those statements.</p>
+        <p>Example:
+          The following while loop iterates as long as n is less than three:</p>
+        <code>
+          var n = 0; var x = 0; white (n < 3) { n++; x += n; }
+        </code>
+        <p>Con cada iteración, el ciclo incrementa n y agrega ese valor a x. Por lo tanto, x y n toman los siguientes valores:</p>
+        <ul>
+          <li>After the first pass: n = 1 and x = 1</li>
+          <li>After the second pass: n = 2 and x = 3</li>
+          <li>After the third pass: n = 3 and x = 6</li>
+        </ul>
+        <p>Después de completar el tercer paso, la condición n < 3 ya no es verdadera, por lo que el ciclo termina.
+        </p>
+      </section>
+      <section class="main-section" id="declaración_de_funciones">
+        <header>Declaración de funciones</header>
+        <p>Una definición de función (también llamada declaración de función o declaración de función) consta de la palabra clave de función, seguida de:
+        </p>
+        <ul>
+          <li>El nombre de la función</li>
+          <li>Una lista de argumentos de la función, encerrados en paréntesis y separados por comas</li>
+          <li>Las declaraciones de JavaScript que definen la función, encerradas entre corchetes, { }.</li>
+        </ul>
+        <p>Por ejemplo, el siguiente código define una función simple llamada cuadrado:</p>  
+        <code>
+          function square(number) { return number * number; }
+        </code>
+        <p>El cuadrado de la función toma un argumento, llamado número. La función consta de una declaración que dice devolver el argumento de la función (es decir, el número) multiplicado por sí mismo. La declaración de retorno especifica el valor devuelto por la función.
+        </p>
+        <code>
+          return number * number;
+        </code>
+        <p>Los parámetros primitivos (como un número) se pasan a funciones por valor; el valor se pasa a la función, pero si la función cambia el valor del parámetro, este cambio no se refleja globalmente ni en la función que llama.
+        </p>
+      </section>
+      <section class="main-section"  id="referencias">
+        <header>Referencias</header>
+        <ul>
+          <li>Toda la documentación tomada en esta página es de <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">MDN</a></li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
