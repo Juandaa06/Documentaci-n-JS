@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+*{
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Lato', sans-serif;
+    background-color: white;
+    color: hsl(240, 16%, 18%);
+}
+
+
+
+header{
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding-top: 1rem;
+}
+
+#navbar{
+    position: fixed;
+    min-width: 290px;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 100%;
+    border-right: solid;
+    background-color: hsl(240, 16%, 18%);
+    color:  white;
+    z-index: 2;
+}
+
+#navbar header{
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+#navbar a {
+    display: block;
+    color: white;
+    border-bottom: 1px solid ;
+    text-decoration: none;
+    padding: 10px 0px;
+    padding-left: 15px;
+    font-weight: 600;
+}
+
+#navbar a:hover{
+    text-decoration: underline;
+    color: #ddd;
+}
+
+#navbar a.none {
+    border-bottom: none;
+}
+
+#main-doc{
+    position: absolute;
+    margin-left: 310px;
+    padding: 20px;
+    margin-bottom: 110px
+}
+
+ul{
+    font-size: 0.95rem;
+    padding-left: 3rem;
+}
+
+li{
+    padding-bottom: 10px;
+}
+
+code{
+    text-align: left;
+    white-space: pre-line;
+    position: relative;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 2;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+}
+
+@media (max-width: 550px){
+    
+    nav{
+        width: 150px;
+    }
+
+    main{
+        margin-left: 170px;
+    }
+}
